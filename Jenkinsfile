@@ -20,18 +20,11 @@
 // }
 
 pipeline {
-        agent {
-        docker {
-            image 'nginx:latest'  // Utiliser l'image nginx (ou l'image de ton choix)
-            args '-p 81:80'  // Mapper le port 80 du conteneur sur le port 81 de l'hôte
-        }
-        }
+agent any
     stages {
         stage('Test Docker') {
             steps {
                 sh 'docker version'
-                sh 'echo CACA'
-                sh 'docker ps'
                 sh 'docker run hello-world'
             }
         }
