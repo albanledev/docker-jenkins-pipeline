@@ -1,16 +1,10 @@
-# Utiliser l'image officielle Jenkins LTS comme base
 FROM jenkins/jenkins:lts
 
-# Passer à l'utilisateur root pour installer Docker
 USER root
 
-# Installer Docker à l'intérieur du conteneur Jenkins
+# Installer Docker
 RUN apt-get update && \
     apt-get install -y docker.io && \
-    apt-get clean && \
-    docker --version
+    apt-get clean
 
-RUN usermod -aG docker jenkins
-
-# Repasser à l'utilisateur Jenkins après l'installation de Docker
 USER jenkins
