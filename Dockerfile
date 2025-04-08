@@ -7,7 +7,10 @@ USER root
 # Installer Docker à l'intérieur du conteneur Jenkins
 RUN apt-get update && \
     apt-get install -y docker.io && \
-    apt-get clean
+    apt-get clean && \
+    docker --version
+
+RUN usermod -aG docker jenkins
 
 # Repasser à l'utilisateur Jenkins après l'installation de Docker
 USER jenkins
