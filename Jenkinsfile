@@ -29,12 +29,9 @@ pipeline {
     stages {
         stage('Test Docker') {
             steps {
-                // sh 'docker version'
-                // sh 'echo CACA'
-                // sh 'docker ps'
-                // sh 'docker run hello-world'
-                sh 'docker ps'  // Lister les conteneurs Docker actifs
-                sh 'curl localhost:81'  // Vérifier si nginx fonctionne correctement sur le port 81
+                sh 'docker version'
+                sh 'echo CACA'
+                sh 'docker ps'
             }
         }
     }
