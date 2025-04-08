@@ -32,6 +32,7 @@ pipeline {
                 sh 'docker version'
                 sh 'echo CACA'
                 sh 'docker ps'
+                sh 'docker run hello-world'
             }
         }
     }
