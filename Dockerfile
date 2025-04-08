@@ -1,10 +1,3 @@
-FROM jenkins/jenkins:lts
+FROM node:16-alpine
 
-USER root
-
-# Installer Docker
-RUN apt-get update && \
-    apt-get install -y docker.io && \
-    apt-get clean
-
-USER jenkins
+RUN apk add -U git curl
